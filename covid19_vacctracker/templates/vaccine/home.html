@@ -1,0 +1,52 @@
+<style>
+table{
+   font-family: arial, sans-serif;
+  border-collapse: collapse;
+
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+th {
+  background-color: tomato;
+}
+tr:nth-child(odd) {
+background-color: lightgray;
+}
+</style>
+<table>
+    <thead>
+    <tr>
+    <th>Lastname</th>
+    <th>Firstname</th>
+    <th>Contact No.</th>
+    <th>Barangay</th>
+    <th>Street</th>
+    <th>House No.</th>
+    <th>City</th>
+    <th>Age</th>
+    <th>Date Of Birth</th>
+    <th>Vaccine Name</th>
+</tr>
+    </thead>
+    {% for tracker in trackers %}
+<tbody>
+<tr>
+
+    <td>{{ tracker.lastname }}</td>
+    <td>{{ tracker.firstname }}</td>
+    <td>{{ tracker.contactno }}</td>
+    <td>{{ tracker.barangay }}</td>
+    <td>{{ tracker.streetname }}</td>
+    <td>{{ tracker.house }}</td>
+    <td>{{ tracker.city }}</td>
+    <td>{{ tracker.age }}</td>
+    <td>{{ tracker.birthdate|date:'d-M-Y' }}</td>
+    <td>{{ tracker.vaccinename }}</td>
+
+</tr>
+</tbody>
+{% endfor %}
+</table>
